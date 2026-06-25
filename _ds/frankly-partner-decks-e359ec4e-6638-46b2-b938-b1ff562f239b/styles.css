@@ -1,0 +1,138 @@
+/* ============================================================
+   Frankly × Partner — Design System tokens
+   Source of truth for color, type, radius, shadow, motion.
+   Brand fonts (Almarena Neue Display, Switzer) are licensed and
+   to be uploaded as @font-face later; until then the stack falls
+   back to a serif (display) and Inter (sans), respectively.
+   ============================================================ */
+
+/* ── Brand display face (self-hosted) ─────────────────────────
+   Almarena Neue Display — SemiBold (600). Hero headlines & titles. */
+@font-face {
+  font-family: "Almarena Neue Display";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/AlmarenaNeue-Ds-SemiBold.woff2") format("woff2"),
+       url("fonts/AlmarenaNeue-Ds-SemiBold.woff") format("woff"),
+       url("fonts/AlmarenaNeue-Ds-SemiBold.otf") format("opentype");
+}
+
+/* ── Brand text face (self-hosted) ───────────────────────────
+   Switzer — body, UI, micro. Full weight range, upright + italic. */
+@font-face { font-family:"Switzer"; font-style:normal; font-weight:100; font-display:swap; src:url("fonts/Switzer-Thin.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:italic; font-weight:100; font-display:swap; src:url("fonts/Switzer-ThinItalic.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:normal; font-weight:200; font-display:swap; src:url("fonts/Switzer-Extralight.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:italic; font-weight:200; font-display:swap; src:url("fonts/Switzer-ExtralightItalic.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:normal; font-weight:300; font-display:swap; src:url("fonts/Switzer-Light.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:italic; font-weight:300; font-display:swap; src:url("fonts/Switzer-LightItalic.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:normal; font-weight:400; font-display:swap; src:url("fonts/Switzer-Regular.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:italic; font-weight:400; font-display:swap; src:url("fonts/Switzer-Italic.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:normal; font-weight:500; font-display:swap; src:url("fonts/Switzer-Medium.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:italic; font-weight:500; font-display:swap; src:url("fonts/Switzer-MediumItalic.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:normal; font-weight:600; font-display:swap; src:url("fonts/Switzer-Semibold.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:italic; font-weight:600; font-display:swap; src:url("fonts/Switzer-SemiboldItalic.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:normal; font-weight:700; font-display:swap; src:url("fonts/Switzer-Bold.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:italic; font-weight:700; font-display:swap; src:url("fonts/Switzer-BoldItalic.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:normal; font-weight:800; font-display:swap; src:url("fonts/Switzer-Extrabold.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:italic; font-weight:800; font-display:swap; src:url("fonts/Switzer-ExtraboldItalic.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:normal; font-weight:900; font-display:swap; src:url("fonts/Switzer-Black.otf") format("opentype"); }
+@font-face { font-family:"Switzer"; font-style:italic; font-weight:900; font-display:swap; src:url("fonts/Switzer-BlackItalic.otf") format("opentype"); }
+
+:root {
+  /* ── Brand color ─────────────────────────────────────────── */
+  --calm-pink:    #FFD3E3;  /* Pale Calm — primary surface / brand pink   */
+  --calm-deep:    #FFACCA;  /* Deep Calm — pressed / accent pink           */
+  --limestone:    #F5F4F1;  /* Limestone — neutral page ground             */
+  --blush:        #FFF6FA;  /* Blush — faint pink page tint (brand guide)  */
+  --stone:        #ECE9E4;  /* Stone — secondary neutral surface           */
+  --bordeaux:     #2D0011;  /* Bordeaux / Grounded — ink + primary action  */
+  --white:        #FFFFFF;
+
+  /* Extended pinks (from Frankly Design System) */
+  --blush-stone:  #F3DEE4;  /* pink-stone — quiet pink-tinted surface     */
+  --blush-grey:   #E9DFE2;  /* pink-grey — muted pink-neutral             */
+
+  /* Stone scale */
+  --stone-2:      #F0EEE9;  /* card surface on stone grounds              */
+  --stone-4:      #E3DDD5;  /* heavy stone — strongest neutral fill       */
+  --stone-dark:   #3D342B;  /* warm dark stone — rare dark neutral        */
+
+  /* Greys */
+  --grey-1:       #585C60;  /* secondary text on white/stone              */
+  --grey-2:       #838383;  /* tertiary text                              */
+  --grey-4:       #D9D9D9;  /* hairlines on white                        */
+
+  /* Semantic */
+  --success:      #057642;  /* deep green — confirmations                 */
+  --success-live: #27C966;  /* live green — active states & switches      */
+  --lavender:     #F0EEFC;  /* lilac surface — rare tertiary accent       */
+
+  /* Ink scale derived from Bordeaux */
+  --ink:          #2D0011;
+  --ink-70:       rgba(45,0,17,0.70);
+  --ink-55:       rgba(45,0,17,0.55);
+  --ink-40:       rgba(45,0,17,0.40);
+
+  /* ── Type ────────────────────────────────────────────────── */
+  --font-display: "Almarena Neue Display", "Almarena Neue", Georgia, "Times New Roman", serif;
+  --font-sans:    "Switzer", system-ui, -apple-system, sans-serif;
+
+  /* ── Radius ──────────────────────────────────────────────── */
+  --radius-xs:    6px;
+  --radius-sm:    8px;
+  --radius-md:    12px;   /* default for buttons, nav, inputs */
+  --radius-card:  16px;
+  --radius-xl:    24px;
+  --radius-2xl:   32px;
+  --radius-pill:  999px;
+
+  /* ── Shadow ──────────────────────────────────────────────── */
+  --shadow-xs:    0 1px 2px rgba(0,0,0,0.03);
+  --shadow-sm:    0 2px 4px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md:    0 6px 14px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg:    0 14px 32px rgba(0,0,0,0.09), 0 4px 8px rgba(0,0,0,0.04);
+  --shadow-pink:  0 16px 40px rgba(255,172,202,0.45);
+  --shadow-soft:  0 18px 48px rgba(45,0,17,0.12);
+  --shadow-rest:  0 4px 16px rgba(45,0,17,0.06);
+  --shadow-lift:  0 3px 7px rgba(45,0,17,0.085);   /* low resting shadow under a lifted card */
+  --card-edge:    linear-gradient(90deg, #FFACCA, #2D0011, #FFACCA);  /* animated hover edge-border */
+  --hover-ease:   cubic-bezier(.22,.61,.36,1);
+
+  /* Spacing — 4px base scale */
+  --space-1:      4px;
+  --space-2:      8px;
+  --space-3:      12px;
+  --space-4:      16px;
+  --space-5:      24px;
+  --space-6:      32px;
+  --space-7:      48px;
+  --space-8:      64px;
+  --space-9:      96px;
+  --space-10:     128px;
+
+  /* ── Motion ──────────────────────────────────────────────── */
+  /* Lift used by cards & interactive surfaces on hover */
+  --lift:           translateY(-4px) scale(1.03); /* @kind other */
+
+  /* Easing curves — extracted from the deck */
+  /* --ease: signature deck ease (slides, dots, pops, lifts) */
+  --ease:           cubic-bezier(.22,.61,.36,1); /* @kind other */
+  /* --ease-out: entrance soft-landing (fade-ups, reveals) */
+  --ease-out:       cubic-bezier(.16,1,.3,1); /* @kind other */
+  /* --ease-in-out: hover micro-interactions (cobrand, contact) */
+  --ease-in-out:    cubic-bezier(.4,0,.2,1); /* @kind other */
+  /* --ease-fly: loader iris accelerate (fly-through) */
+  --ease-fly:       cubic-bezier(.5,0,.85,.42); /* @kind other */
+
+  /* Durations — extracted from the deck */
+  --dur-slide:      700ms; /* @kind other */
+  --dur-fade:       600ms; /* @kind other */
+  --dur-hover:      320ms; /* @kind other */
+  --dur-ui:         300ms; /* @kind other */
+  --dur-micro:      220ms; /* @kind other */
+  --dur-pop:        480ms; /* @kind other */
+  --dur-count:      1500ms; /* @kind other */
+  --dur-fly:        820ms; /* @kind other */
+  --dur-loader:     620ms; /* @kind other */
+}

@@ -1,0 +1,187 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "assets/js/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Almarena Neue Display|Switzer))/i]",
+        "message": "Font not provided by the design system. Available: Almarena Neue Display, Switzer."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {},
+    "tokens": [
+      "--blush",
+      "--blush-grey",
+      "--blush-stone",
+      "--bordeaux",
+      "--calm-deep",
+      "--calm-pink",
+      "--dur-count",
+      "--dur-fade",
+      "--dur-fly",
+      "--dur-hover",
+      "--dur-loader",
+      "--dur-micro",
+      "--dur-pop",
+      "--dur-slide",
+      "--dur-ui",
+      "--ease",
+      "--ease-fly",
+      "--ease-in-out",
+      "--ease-out",
+      "--font-display",
+      "--font-sans",
+      "--grey-1",
+      "--grey-2",
+      "--grey-4",
+      "--ink",
+      "--ink-40",
+      "--ink-55",
+      "--ink-70",
+      "--lavender",
+      "--lift",
+      "--limestone",
+      "--radius-2xl",
+      "--radius-card",
+      "--radius-md",
+      "--radius-pill",
+      "--radius-sm",
+      "--radius-xl",
+      "--radius-xs",
+      "--shadow-lg",
+      "--shadow-md",
+      "--shadow-pink",
+      "--shadow-rest",
+      "--shadow-sm",
+      "--shadow-soft",
+      "--shadow-xs",
+      "--space-1",
+      "--space-10",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--stone",
+      "--stone-2",
+      "--stone-4",
+      "--stone-dark",
+      "--success",
+      "--success-live",
+      "--white"
+    ],
+    "tokenKinds": {
+      "--calm-pink": "color",
+      "--calm-deep": "color",
+      "--limestone": "color",
+      "--blush": "color",
+      "--stone": "color",
+      "--bordeaux": "color",
+      "--white": "color",
+      "--blush-stone": "color",
+      "--blush-grey": "color",
+      "--stone-2": "color",
+      "--stone-4": "color",
+      "--stone-dark": "color",
+      "--grey-1": "color",
+      "--grey-2": "color",
+      "--grey-4": "color",
+      "--success": "color",
+      "--success-live": "color",
+      "--lavender": "color",
+      "--ink": "color",
+      "--ink-70": "color",
+      "--ink-55": "color",
+      "--ink-40": "color",
+      "--font-display": "font",
+      "--font-sans": "font",
+      "--radius-xs": "radius",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-card": "radius",
+      "--radius-xl": "radius",
+      "--radius-2xl": "radius",
+      "--radius-pill": "radius",
+      "--shadow-xs": "shadow",
+      "--shadow-sm": "shadow",
+      "--shadow-md": "shadow",
+      "--shadow-lg": "shadow",
+      "--shadow-pink": "shadow",
+      "--shadow-soft": "shadow",
+      "--shadow-rest": "shadow",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--space-10": "spacing",
+      "--lift": "other",
+      "--ease": "other",
+      "--ease-out": "other",
+      "--ease-in-out": "other",
+      "--ease-fly": "other",
+      "--dur-slide": "other",
+      "--dur-fade": "other",
+      "--dur-hover": "other",
+      "--dur-ui": "other",
+      "--dur-micro": "other",
+      "--dur-pop": "other",
+      "--dur-count": "other",
+      "--dur-fly": "other",
+      "--dur-loader": "other"
+    },
+    "fontFamilies": [
+      "Almarena Neue Display",
+      "Switzer"
+    ]
+  }
+}
