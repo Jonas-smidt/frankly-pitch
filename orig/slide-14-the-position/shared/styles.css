@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "Switzer";
+  src: url("./assets/fonts/Switzer-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url("./assets/fonts/Switzer-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url("./assets/fonts/Switzer-Semibold.otf") format("opentype");
+  font-weight: 600 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Almarena Neue";
+  src: url("./assets/fonts/AlmarenaNeue-Ds-SemiBold.otf") format("opentype");
+  font-weight: 600 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Almarena Neue Demo";
+  src: url("./assets/fonts/AlmarenaNeue-Ds-SemiBold.otf") format("opentype");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --deck-scale: 1;
+  --deck-width: 1920px;
+  --deck-height: 1080px;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #1f1f1f;
+  font-family: "Switzer", Arial, sans-serif;
+}
+
+.deck {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: var(--deck-width);
+  height: var(--deck-height);
+  transform: translate(-50%, -50%) scale(var(--deck-scale));
+  transform-origin: center;
+}
+
+.figma-slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+  overflow: hidden;
+}
+
+.figma-slide.is-active {
+  display: block;
+}
+
+.figma-fill,
+.figma-node,
+.figma-shape,
+.figma-text {
+  position: absolute;
+  margin: 0;
+}
+
+.figma-fill {
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.figma-shape {
+  pointer-events: none;
+}
+
+.figma-axis-arrow {
+  position: absolute;
+  width: 0;
+  pointer-events: none;
+}
+
+.figma-axis-arrow::before,
+.figma-axis-arrow::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--arrow-size) / -2 - var(--arrow-stroke) / 2);
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  border-top: var(--arrow-stroke) solid var(--arrow-color);
+  border-left: var(--arrow-stroke) solid var(--arrow-color);
+}
+
+.figma-axis-arrow::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.figma-axis-arrow::after {
+  bottom: 0;
+  transform: rotate(225deg);
+}
+
+.figma-node {
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.figma-text {
+  white-space: pre-wrap;
+  overflow: visible;
+}
+
+
+
+.single-slide .figma-slide {
+  display: block;
+}
+
+.deck-ico{cursor:default}
+.deck-ico:hover{animation:deckpop .6s cubic-bezier(.34,1.56,.64,1)}
+@keyframes deckpop{0%{transform:scale(1) rotate(0)}40%{transform:scale(1.28) rotate(-6deg)}70%{transform:scale(.95) rotate(4deg)}100%{transform:scale(1) rotate(0)}}
